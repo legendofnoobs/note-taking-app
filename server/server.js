@@ -6,10 +6,13 @@ import cors from "cors";
 import authRouter from "./routes/authRoute.js";
 import noteRouter from "./routes/noteRoute.js";
 
+// https://note-taking-app-five-wine.vercel.app
+// http://localhost:5173
+
 const app = express();
 dotenv.config();
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://note-taking-app-five-wine.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization']
