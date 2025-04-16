@@ -9,8 +9,11 @@ import noteRouter from "./routes/noteRoute.js";
 // https://note-taking-app-five-wine.vercel.app
 // http://localhost:5173
 
-const app = express();
 dotenv.config();
+connectDB();
+
+const app = express();
+
 app.use(cors({
     origin: 'https://note-taking-app-five-wine.vercel.app',
     credentials: true,
@@ -18,11 +21,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
-connectDB();
-
-app.listen(5000, () => {
-    console.log("Server is running on port 5000");
-});
 
 app.get("/", (req, res) => {
     res.send("Hello World");
@@ -31,4 +29,6 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/notes", noteRouter);
 
+// REMOVE app.listen(...)
+// Instead, export the app for Vercel:
 export default app;
