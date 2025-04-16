@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.p-editor-content {
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word !important;
+}
