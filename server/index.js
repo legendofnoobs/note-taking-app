@@ -30,5 +30,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/notes", noteRouter);
 
 // REMOVE app.listen(...)
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running`); 
+})
 // Instead, export the app for Vercel:
 export default app;
