@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import serverless from "serverless-http";
-import { connectDB } from "../database/connection.js";
+import { connectDB } from "./database/connection.js";
 
-import authRouter from "../routes/authRoute.js";
-import noteRouter from "../routes/noteRoute.js";
+import authRouter from "./routes/authRoute.js";
+import noteRouter from "./routes/noteRoute.js";
 
 dotenv.config();
 const app = express();
